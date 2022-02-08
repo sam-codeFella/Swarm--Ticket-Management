@@ -42,7 +42,7 @@ public class TicketUtility {
         List<String> possibleStates = ticket.getState().getAvailableStates();
         logger.info("Possible states are -->");
         for(String state : possibleStates){
-            System.out.print("---");
+            System.out.print("    ");
             System.out.print(state);
 
         }
@@ -110,7 +110,7 @@ public class TicketUtility {
         else{
             logger.info("Ticket current state -->" + ticket.getState().getStateName());
             showPossibleStates(ticket);
-            logger.info("Please enter state you would like to change into ?");
+            logger.info("Please enter state you would like to change into ? (Case sensitive");
             String result = change.nextLine();
             if(!ticket.getState().getAvailableStates().contains(result)){ //won't this be object comparison , need a deep comparison here maybe.
                logger.info("Invalid state transition.");
